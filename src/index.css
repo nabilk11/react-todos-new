@@ -68,3 +68,16 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/****************** COMPONENT STYLING ****************/
+
+/****** TO DO ******/
+.complete {
+  text-decoration: line-through;
+  color: red;
+}
+
+.incomplete {
+  text-decoration: none;
+  color: green;
+}
