@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { Header } from './components/Header'
+import { ToDoForm } from './components/ToDoForm'
 import { ToDoList } from './components/ToDoList'
 import data from './data/data.json'
 
@@ -31,7 +32,12 @@ function App() {
     setToDoList(filtered)
   }
   
-  
+  // add task
+  const addTask = (newTask)=> {
+    let newList = [...toDoList]
+    newList.push({id: toDoList.length + 1, task: userInput, complete: false });
+    setToDoList(newList)
+  }
   
   
   
@@ -39,7 +45,7 @@ function App() {
     <div className="App">
       <Header />
       <ToDoList filterComplete={filterComplete} completeToggle={completeToggle} toDoList={toDoList}/>
-      
+      <ToDoForm addTask={addTask}/>
       
       
       <div className="card">
