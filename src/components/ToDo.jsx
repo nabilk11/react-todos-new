@@ -1,15 +1,12 @@
-import React from 'react'
+import React from "react";
 
-export const ToDo = ({ todo }) => {
+export const ToDo = ({ todo, completeToggle }) => {
   return (
-    <div className='card'>
-    <div>
-    <h3 className={todo.complete ? 'complete' : 'incomplete'}>{todo.task}</h3>
-    {todo.complete ? <span className='complete-emo'>✅</span> : <span className='inc-emo'>⛔️</span> }
-
+    <div className="card">
+      <h3 className={todo.complete ? "complete" : "incomplete"}>{todo.task}</h3>
+      <button onClick={completeToggle} className="btn" id="btn-sm">
+        {todo.complete ? "Mark Incomplete ⛔️" : "Mark Complete ✅"}
+      </button>
     </div>
-          
-    </div>
-  )
-}
- 
+  );
+};

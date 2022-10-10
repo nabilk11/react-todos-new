@@ -14,6 +14,22 @@ function App() {
 
   // todolist state
   const [toDoList, setToDoList] = useState(data)
+
+  // toggle complete/incomplete function
+  const completeToggle = (id) => {
+    let mappedTask = toDoList.map(task => {
+      return task.id == id ? { ...task, complete: !task.complete } : { ...task}
+    })
+    setToDoList(mappedTask)
+  }
+
+  // delete/filter completed tasks
+  const filterComplete = ()=> {
+    let filtered = toDoList.filter(task => {
+      return !task.complete
+    })
+    setToDoList(filtered)
+  }
   
   
   
@@ -22,10 +38,12 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <ToDoList toDoList={toDoList}/>
+      <ToDoList filterComplete={filterComplete} completeToggle={completeToggle} toDoList={toDoList}/>
+      
+      
+      
       <div className="card">
-
-        <button onClick={() => setCount((counter) => count + 1)}>
+        <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button> 
         
