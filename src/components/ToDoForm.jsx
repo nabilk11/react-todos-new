@@ -1,7 +1,7 @@
 import React from "react";
 
 export const ToDoForm = ({ addTask }) => {
-  const [newTask, setNewTask] = useState(" ");
+  const [newTask, setNewTask] = useState("");
 
   // handleChange for task
   const handleChange = (e) => {
